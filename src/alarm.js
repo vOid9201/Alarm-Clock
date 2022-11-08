@@ -1,4 +1,7 @@
 let alarms = [];
+let switchOnImgPath = "img/switch-on.PNG";
+let switchOffImgPath = "img/switch-off.PNG";
+let deleteImgPath = "img/delete.PNG";
 
 /*related to the clock*/
 
@@ -64,14 +67,14 @@ function renderAlarmList(){
         imgItem1.setAttribute("data-switch" , "1");
 
         if(alarms[i].isActive){
-            imgItem1.setAttribute("src" , "img/switch-on.PNG");
+            imgItem1.setAttribute("src" , switchOnImgPath);
             setAlarm(alarms[i]);
         }
         else
-            imgItem1.setAttribute("src" , "img/switch-off.PNG");
+            imgItem1.setAttribute("src" , switchOffImgPath);
 
         const imgItem2 = document.createElement('img');
-        imgItem2.setAttribute("src" , "img/delete.PNG");
+        imgItem2.setAttribute("src" , deleteImgPath);
         imgItem2.classList.add('img-container');
         imgItem2.classList.add('del');
         imgItem2.setAttribute("data-id" , alarms[i].id);
