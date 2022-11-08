@@ -64,14 +64,14 @@ function renderAlarmList(){
         imgItem1.setAttribute("data-switch" , "1");
 
         if(alarms[i].isActive){
-            imgItem1.setAttribute("src" , "/img/switch-on.PNG");
+            imgItem1.setAttribute("src" , "img/switch-on.PNG");
             setAlarm(alarms[i]);
         }
         else
-            imgItem1.setAttribute("src" , "/img/switch-off.PNG");
+            imgItem1.setAttribute("src" , "img/switch-off.PNG");
 
         const imgItem2 = document.createElement('img');
-        imgItem2.setAttribute("src" , "/img/delete.PNG");
+        imgItem2.setAttribute("src" , "img/delete.PNG");
         imgItem2.classList.add('img-container');
         imgItem2.classList.add('del');
         imgItem2.setAttribute("data-id" , alarms[i].id);
