@@ -1,0 +1,529 @@
+:root {
+    --ini-second : 0deg;
+    --ini-minute : 0deg;
+    --ini-hour : 0deg;
+
+    --fi-second : 359deg;
+    --fi-minute : 359deg;
+    --fi-hour : 359deg;
+}
+
+body{
+    margin : 0px;
+    padding : 0px;
+    background-color : black;
+    position : absolute;
+    font-weight: bolder;
+    font-size : 1.2rem;
+}
+
+/** Styles related to the Clock **/
+ 
+.clock-container{
+    position : relative;
+    margin : 0px;
+    padding : 0px;
+    
+    top : 10vh;
+    left : 42.5vw;
+
+    width : 15vw;
+    height : 30vh;
+
+    border-radius : 100%;
+    background-color: white;
+}
+#clock-img{
+    display : inline;
+    height : 30vh;
+    width : 15vw;
+}
+.clock-hand{
+    position : absolute;
+    display : inline-block;
+    width : 0.2vw;
+    /* height : 15vh; */
+    right : 7.5vw;
+    margin : 0px;
+    padding : 0px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius : 100%; 
+    border-bottom-right-radius : 100%;
+    /* background-color : orange;  */
+}
+
+#second{
+    z-index : 0;
+    top : 3vh;
+    height: 12vh;
+    background-color : red;
+}
+#minute{
+    z-index : 1;
+    top : 5vh;
+    height : 10vh;
+    background-color : black;
+}
+#hour{
+    z-index : 2;
+    top : 9vh;
+    height : 6vh;
+    background-color : black;
+}
+
+@keyframes rotate-second{
+    0%{
+        transform : rotate(var(--ini-second));
+        transform-origin : 50% 100%;
+    }
+    100%{
+        transform : rotate(var(--fi-second));
+        transform-origin : 50% 100%;
+    }
+}
+
+@keyframes rotate-minute{
+    0%{
+        transform : rotate(var(--ini-minute));
+        transform-origin : 50% 100%;
+    }
+    100%{
+        transform : rotate(var(--fi-minute));
+        transform-origin : 50% 100%;
+    }
+}
+
+@keyframes rotate-hour{
+    0%{
+        transform : rotate(var(--ini-hour));
+        transform-origin : 50% 100%;
+    }
+    100%{
+        transform : rotate(var(--fi-hour));
+        transform-origin : 50% 100%;
+    }
+}
+
+.anim-second{
+    animation : rotate-second 60s infinite linear;
+}
+.anim-minute{
+    animation : rotate-minute 3600s infinite linear;
+}
+.anim-hour{
+    animation : rotate-hour 43200s infinite linear;
+}
+
+/** Styles related to the Analog Clock **/
+
+.current-time-container{
+    position : relative;
+    display : flex;
+    flex-direction: row;
+    flex-wrap : wrap;
+    justify-content : space-between;
+
+    margin : 0px;
+    padding : 0px;
+
+    left : 30vw;
+    top : 18vh;
+
+
+    width : 40vw;
+    height : auto;
+
+    box-shadow : 3px 2px 10px white;
+
+}
+
+.current{
+    margin : 10px;
+    width : 18vw;
+    height : auto;
+    display : flex;
+    flex-direction : row;
+    flex-wrap : wrap;
+    justify-content : center;
+}
+.current span{
+    /* font-size : 1.2rem; */
+    margin : 10px;
+    text-align: center;
+    display : inline-block;
+    width : inherit;
+    color: white;
+}
+.digi-clock{
+
+    margin: 20px 5px;
+    padding : 0px;
+    display : flex;
+    flex-direction : row;
+    flex-wrap : nowrap;
+    align-items: center;
+    width : 3vw;
+    height : 4vh;
+
+    background-color : white;
+
+    box-shadow : 2px 3px 5px grey;
+}
+
+.digi-clock span{
+    margin : 0px;
+    display: inline-block;
+    height : auto;
+    width : inherit;
+    color : black;
+    text-align: center;
+}
+
+/*classes related to the alarm set things*/
+.textbox{
+    font-size : 1rem;
+    text-align: center;
+}
+#add{
+    width : 4vw;
+    display : flex;
+    flex-direction : row;
+    flex-wrap : nowrap;
+    align-items: center;
+    border : none;
+    background-color : green;
+    box-shadow : 2px 2px 3px grey;
+}
+#add span{
+    display: inline-block;
+    height : auto;
+    font-weight : bolder;
+    /* font-size : 1.2rem; */
+}
+
+
+/*regarding the ui of the alarm lists*/
+.alarm-list{
+    position : relative;
+    display : flex;
+    flex-direction : column;
+    flex-wrap : wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    margin : 0px;
+    padding : 15px 0px;
+    left : 30vw;
+    top : 30vh;
+
+    box-shadow: 3px 2px 10px white;
+
+    width : 40vw;
+    height : auto;
+}
+.alarm-items{
+    display : flex;
+    flex-direction : row;
+    flex-wrap : nowrap;
+    justify-content : space-between;
+    align-items : center;
+    background-color : white;
+    margin : 2px 1vw;
+    width : 38vw;
+    height : 5vh;
+}
+.timer{
+    /* font-size : 1.2rem; */
+    display : inline-block;
+    /* align-self : center; */
+    width : 30vw;
+    height : auto;
+}
+.alarm-buttons{
+    /* align-self : center; */
+    display : flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items : center;
+    width : 3vw;
+    height : 3vh;
+}
+.img-container{
+    width : 2.8vw;
+    height : 3vh; 
+}
+.del{
+    margin-left : 0.9vw;
+    width : 1.2vw;
+    height : 2.5vh;
+}
+
+/*responsiveness for this screen ration is completed : )*/
+/*trying to write responsive code ; - ;*/
+@media only screen and (max-width : 360px){
+    body{
+        font-size : 1.2rem;
+        font-weight : bold;
+    }
+    .clock-container{
+        width : 70vw;
+        height : 30vh;
+        left : 15vw;
+    }
+    #clock-img{
+        width : 70vw;
+        height : 30vh;
+    }
+    .clock-hand{
+        right : 35.2vw;
+        width : 1vw;
+    }
+    #second{
+        top : 2vh;
+        height : 13vh;
+    }
+    #minute{
+        top : 5vh;
+        height : 10vh;
+    }
+    #hour{
+        top : 8vh;
+        height : 7vh;
+    }
+    .current-time-container{
+        width : 80vw;
+        justify-content : center;
+        left : 10vw;
+    }
+    .current{
+        width : 70vw;
+    }
+    .current span{
+        /* font-size: 2rem; */
+        letter-spacing : 3px;
+    }
+    .digi-clock{
+        width : 10vw;
+        height : 5vh;
+    }
+    .digi-clock span{
+        height : auto;
+        letter-spacing: normal;
+    }
+    #add{
+        width : 12vw;
+    }
+    #add span{
+        height : auto;
+        /* font-size : 1.3rem; */
+        letter-spacing: normal;
+    }
+    .alarm-list{
+        width : 80vw;
+        left : 10vw;
+    }
+    .alarm-items{
+        width : 70vw;
+        height : 5vh;
+    }
+    .timer{
+        font-size : 1rem;
+        width : 40vw;
+        height : auto;
+    }
+    .alarm-buttons{
+        width : 10vw;
+        height : 5vh;
+    }
+    .img-container{
+        width : 15vw;
+        height : 5vh;
+    }
+    .del{
+        width : 8vw;
+        height : 3vh;
+    }
+    
+    .textbox{
+        font-weight: bold;
+        font-size : 1.2rem;
+    }
+}
+
+@media only screen and (max-width : 768px) and (min-width : 361px){
+    body{
+        font-size : 1.3rem;
+        font-weight: bolder;
+    }
+    .clock-container{
+        width : 70vw;
+        height : 30vh;
+        left : 15vw;
+    }
+    #clock-img{
+        width : 70vw;
+        height : 30vh;
+    }
+    .clock-hand{
+        right : 35.2vw;
+        width : 1vw;
+    }
+    #second{
+        top : 2vh;
+        height : 13vh;
+    }
+    #minute{
+        top : 5vh;
+        height : 10vh;
+    }
+    #hour{
+        top : 8vh;
+        height : 7vh;
+    }
+    .current-time-container{
+        width : 80vw;
+        justify-content : center;
+        left : 10vw;
+    }
+    .current{
+        width : 70vw;
+    }
+    .current span{
+        font-size: 1.5rem;
+        letter-spacing : 3px;
+    }
+    .digi-clock{
+        width : 10vw;
+        height : 5vh;
+    }
+    .digi-clock span{
+        height : auto;
+        letter-spacing: normal;
+    }
+    #add{
+        width : 12vw;
+    }
+    #add span{
+        height : auto;
+        font-size : 1.3rem;
+        letter-spacing: normal;
+    }
+    .textbox{
+        font-weight: bold;
+        font-size : 1.3rem;
+    }
+    .alarm-list{
+        width : 80vw;
+        left : 10vw;
+    }
+    .alarm-items{
+        width : 70vw;
+        height : 5vh;
+    }
+    .timer{
+        width : 30vw;
+        height : auto;
+    }
+    .alarm-buttons{
+        width : 10vw;
+        height : 5vh;
+    }
+    .img-container{
+        width : 15vw;
+        height : 5vh;
+    }
+    .del{
+        width : 8vw;
+        height : 3vh;
+    }
+}
+
+@media only screen and (max-width : 1023px) and (min-width : 768px){
+    body{
+        font-size : 1.75rem;
+        font-weight: bolder;
+    }
+    .clock-container{
+        width : 70vw;
+        height : 30vh;
+        left : 15vw;
+    }
+    #clock-img{
+        width : 70vw;
+        height : 30vh;
+    }
+    .clock-hand{
+        right : 35.2vw;
+        width : 1vw;
+    }
+    #second{
+        top : 2vh;
+        height : 13vh;
+    }
+    #minute{
+        top : 5vh;
+        height : 10vh;
+    }
+    #hour{
+        top : 8vh;
+        height : 7vh;
+    }
+    .current-time-container{
+        width : 80vw;
+        justify-content : center;
+        left : 10vw;
+    }
+    .current{
+        width : 70vw;
+    }
+    .current span{
+        /* font-size: 1.5rem; */
+        letter-spacing : 3px;
+    }
+    .digi-clock{
+        width : 10vw;
+        height : 5vh;
+    }
+    .digi-clock span{
+        height : auto;
+        letter-spacing: normal;
+    }
+    #add{
+        width : 12vw;
+    }
+    #add span{
+        height : auto;
+        font-size : 1.5rem;
+        letter-spacing: bolder;
+    }
+    .alarm-list{
+        width : 80vw;
+        left : 10vw;
+    }
+    .alarm-items{
+        width : 70vw;
+        height : 5vh;
+    }
+    .timer{
+        width : 30vw;
+        height : auto;
+    }
+    .alarm-buttons{
+        width : 10vw;
+        height : 5vh;
+    }
+    .img-container{
+        width : 15vw;
+        height : 5vh;
+    }
+    .del{
+        width : 8vw;
+        height : 3vh;
+    }
+    
+    .textbox{
+        font-weight: bold;
+        font-size : 1.75rem;
+    }
+}

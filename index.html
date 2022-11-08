@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <div class = "clock-container">
+        <img src = "img/8TzKz9yRc.PNG" id = "clock-img">
+        <div class = "clock-hand" id = "second"></div>
+        <div class = "clock-hand" id = "minute"></div>
+        <div class = "clock-hand" id = "hour"></div>
+    </div>
+
+    <div class = "current-time-container">
+        <div class = "current">
+            <span>Current Time</span>
+            <div class = "digi-clock">
+                <span id = "hr"></span>
+            </div>
+            <div class = "digi-clock">
+                <span id = "mi"></span>
+            </div>
+            <div class = "digi-clock">
+                <span id = "se"></span>
+            </div>
+        </div>
+        <div class =  "current">
+            <span>Set Alarm Time</span>
+            <input type = "text" class = "digi-clock textbox" id = "inHr">
+            <input type = "text" class = "digi-clock textbox" id = "inMin">
+            <input type = "text" class = "digi-clock textbox" id = "inSec">
+            <button type = "submit" class = "digi-clock" id = "add"><span>ADD</span></button>
+        </div>
+    </div>
+    <ul type = "none" class = "alarm-list">
+        <!-- <li class = "alarm-items">
+            <span class = "timer"></span>
+            <div class ="alarm-buttons">
+                <img src = "" class = "img-container" data-id = "" data-switch = "">
+            </div>
+            <div class ="alarm-buttons">
+                <img src = "" class = "img-container del" data-id = "" data-switch = "">
+            </div>
+        </li> -->
+    </ul>
+
+    <script src = "libraries/jquery-3.6.1.js"></script>
+    <script src = "src/clock.js"></script>
+    <script src = "src/alarm.js"></script>
+    
+</body>
+</html>
