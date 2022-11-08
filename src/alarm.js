@@ -141,10 +141,16 @@ function addAlarm(hour , min , sec){
 
 /*deleting an alarm */
 function removeAlarm(id){
-    let newalarms = alarms.filter((v)=>{
-        return v.id != id;
-    });
-
+    let newalarms = [];
+    for(let i = 0 ; i < alarms.length ; i ++){
+        if(id == alarms[i].id){
+            if(alarms[i].isActive)
+                setAlarmToggle(alarms[i].id);
+        }
+        else{
+            newalarms.push(alarms[i]);
+        }
+    }
     alarms = newalarms;
     renderAlarmList();
     showNotification("Alarm deleted successfully");
